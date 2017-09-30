@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infoGAN.py" afterPath="$PROJECT_DIR$/infoGAN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LSGAN.py" afterPath="$PROJECT_DIR$/LSGAN.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,11 +60,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infoGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="infoGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infoGAN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
               <caret line="254" column="26" lean-forward="false" selection-start-line="254" selection-start-column="26" selection-end-line="254" selection-end-column="26" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSGAN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LSGAN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="188" column="26" lean-forward="false" selection-start-line="188" selection-start-column="26" selection-end-line="188" selection-end-column="26" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -109,6 +121,7 @@
         <option value="$PROJECT_DIR$/CVAE.py" />
         <option value="$PROJECT_DIR$/GAN.py" />
         <option value="$PROJECT_DIR$/infoGAN.py" />
+        <option value="$PROJECT_DIR$/LSGAN.py" />
       </list>
     </option>
   </component>
@@ -569,6 +582,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="254" column="26" lean-forward="false" selection-start-line="254" selection-start-column="26" selection-end-line="254" selection-end-column="26" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LSGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="188" column="26" lean-forward="false" selection-start-line="188" selection-start-column="26" selection-end-line="188" selection-end-column="26" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
