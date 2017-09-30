@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WGAN.py" afterPath="$PROJECT_DIR$/WGAN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WGAN_GP.py" afterPath="$PROJECT_DIR$/WGAN_GP.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,11 +84,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WGAN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
               <caret line="188" column="26" lean-forward="false" selection-start-line="188" selection-start-column="26" selection-end-line="188" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WGAN_GP.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WGAN_GP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="199" column="26" lean-forward="false" selection-start-line="199" selection-start-column="26" selection-end-line="199" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -133,6 +143,7 @@
         <option value="$PROJECT_DIR$/infoGAN.py" />
         <option value="$PROJECT_DIR$/LSGAN.py" />
         <option value="$PROJECT_DIR$/WGAN.py" />
+        <option value="$PROJECT_DIR$/WGAN_GP.py" />
       </list>
     </option>
   </component>
@@ -613,6 +624,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="188" column="26" lean-forward="false" selection-start-line="188" selection-start-column="26" selection-end-line="188" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WGAN_GP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="199" column="26" lean-forward="false" selection-start-line="199" selection-start-column="26" selection-end-line="199" selection-end-column="26" />
           <folding />
         </state>
       </provider>
