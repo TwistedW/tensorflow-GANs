@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DRAGAN.py" afterPath="$PROJECT_DIR$/DRAGAN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BEGAN.py" afterPath="$PROJECT_DIR$/BEGAN.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,22 +18,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ACGAN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ACGAN.py">
+      <file leaf-file-name="CGAN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5675">
-              <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="30" />
+            <state relative-caret-position="25">
+              <caret line="189" column="36" lean-forward="false" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CGAN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CGAN.py">
+      <file leaf-file-name="BEGAN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BEGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4550">
-              <caret line="189" column="36" lean-forward="false" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="476">
+              <caret line="200" column="26" lean-forward="false" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DRAGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DRAGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DRAGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="203" column="26" lean-forward="false" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
+            <state relative-caret-position="451">
+              <caret line="206" column="34" lean-forward="true" selection-start-line="206" selection-start-column="34" selection-end-line="206" selection-end-column="34" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -147,6 +149,7 @@
         <option value="$PROJECT_DIR$/WGAN_GP.py" />
         <option value="$PROJECT_DIR$/EBGAN.py" />
         <option value="$PROJECT_DIR$/DRAGAN.py" />
+        <option value="$PROJECT_DIR$/BEGAN.py" />
       </list>
     </option>
   </component>
@@ -666,14 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4550">
-          <caret line="189" column="36" lean-forward="false" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CVAE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4625">
@@ -740,8 +735,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DRAGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="203" column="26" lean-forward="false" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
+        <state relative-caret-position="451">
+          <caret line="206" column="34" lean-forward="true" selection-start-line="206" selection-start-column="34" selection-end-line="206" selection-end-column="34" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="189" column="36" lean-forward="false" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BEGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="200" column="26" lean-forward="false" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
