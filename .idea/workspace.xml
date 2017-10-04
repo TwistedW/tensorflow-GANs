@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EBGAN.py" afterPath="$PROJECT_DIR$/EBGAN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DRAGAN.py" afterPath="$PROJECT_DIR$/DRAGAN.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,11 +60,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EBGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EBGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EBGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="200" column="26" lean-forward="false" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
+            <state relative-caret-position="98">
+              <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DRAGAN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DRAGAN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="203" column="26" lean-forward="false" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -117,16 +128,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -145,6 +146,7 @@
         <option value="$PROJECT_DIR$/WGAN.py" />
         <option value="$PROJECT_DIR$/WGAN_GP.py" />
         <option value="$PROJECT_DIR$/EBGAN.py" />
+        <option value="$PROJECT_DIR$/DRAGAN.py" />
       </list>
     </option>
   </component>
@@ -728,8 +730,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EBGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="200" column="26" lean-forward="false" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
+        <state relative-caret-position="98">
+          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DRAGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="203" column="26" lean-forward="false" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
