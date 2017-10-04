@@ -138,5 +138,5 @@ def main():
         gan.visualize_results(args.epoch-1)
         print(" [*] Testing finished!")
 
-if __name__ == '__main__':
+if __name__=='__main__':
     main()
