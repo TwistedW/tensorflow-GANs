@@ -178,8 +178,9 @@ class VAE(object):
 
                 # display training status
                 counter += 1
-                print("Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.8f, nll: %.8f, kl: %.8f" \
-                      % (epoch, idx, self.num_batches, time.time() - start_time, loss, nll_loss, kl_loss))
+                if idx % 200 == 0:
+                    print("Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.8f, nll: %.8f, kl: %.8f" \
+                          % (epoch, idx, self.num_batches, time.time() - start_time, loss, nll_loss, kl_loss))
 
                 # save training results for every 300 steps
                 if np.mod(counter, 300) == 0:
