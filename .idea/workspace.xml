@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BEGAN.py" afterPath="$PROJECT_DIR$/BEGAN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ACGAN.py" afterPath="$PROJECT_DIR$/ACGAN.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,12 +18,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ACGAN.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ACGAN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ACGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5650">
-              <caret line="233" column="23" lean-forward="false" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="138">
+              <caret line="247" column="66" lean-forward="false" selection-start-line="247" selection-start-column="66" selection-end-line="247" selection-end-column="66" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BEGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BEGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BEGAN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
@@ -134,10 +135,10 @@
         <option value="$PROJECT_DIR$/WGAN_GP.py" />
         <option value="$PROJECT_DIR$/EBGAN.py" />
         <option value="$PROJECT_DIR$/DRAGAN.py" />
-        <option value="$PROJECT_DIR$/ACGAN.py" />
         <option value="$PROJECT_DIR$/VAE.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/BEGAN.py" />
+        <option value="$PROJECT_DIR$/ACGAN.py" />
       </list>
     </option>
   </component>
@@ -455,7 +456,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5650">
           <caret line="233" column="23" lean-forward="false" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -535,7 +538,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5675">
           <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -615,7 +620,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5850">
           <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -665,7 +672,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -815,18 +824,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ACGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5650">
-          <caret line="233" column="23" lean-forward="false" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BEGAN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="210" column="32" lean-forward="false" selection-start-line="210" selection-start-column="32" selection-end-line="210" selection-end-column="32" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ACGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="247" column="66" lean-forward="false" selection-start-line="247" selection-start-column="66" selection-end-line="247" selection-end-column="66" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
