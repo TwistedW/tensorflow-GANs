@@ -191,7 +191,8 @@ class EBGAN(object):
                 self.writer.add_summary(summary_str, counter)
 
                 # update G network
-                _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum, self.g_loss], feed_dict={self.z: batch_z})
+                _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum, self.g_loss],
+                                                       feed_dict={self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # display training status
@@ -208,8 +209,8 @@ class EBGAN(object):
                     manifold_h = int(np.floor(np.sqrt(tot_num_samples)))
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
                     save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w],
-                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_train_{:02d}_{:04d}.png'.format(
-                                    epoch, idx))
+                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
+                                '_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero
             # non-zero value is only for the first epoch after loading pre-trained model
@@ -235,7 +236,8 @@ class EBGAN(object):
         samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample})
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes.png')
 
     @property
     def model_dir(self):
