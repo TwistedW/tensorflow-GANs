@@ -186,8 +186,11 @@ class CVAE(object):
                 batch_z = np.random.uniform(-1, 1, [self.batch_size, self.z_dim]).astype(np.float32)
 
                 # update autoencoder
-                _, summary_str, loss, nll_loss, kl_loss = self.sess.run([self.optim, self.merged_summary_op, self.loss, self.neg_loglikelihood, self.KL_divergence],
-                                               feed_dict={self.inputs: batch_images, self.y: batch_labels, self.z: batch_z})
+                _, summary_str, loss, nll_loss, kl_loss = self.sess.run([self.optim, self.merged_summary_op,
+                                                                         self.loss, self.neg_loglikelihood,
+                                                                         self.KL_divergence],
+                                               feed_dict={self.inputs: batch_images,
+                                                          self.y: batch_labels, self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # display training status
@@ -204,8 +207,8 @@ class CVAE(object):
                     manifold_h = int(np.floor(np.sqrt(tot_num_samples)))
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
                     save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w],
-                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_train_{:02d}_{:04d}.png'.format(
-                                    epoch, idx))
+                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
+                                '_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero
             # non-zero value is only for the first epoch after loading pre-trained model
@@ -234,7 +237,8 @@ class CVAE(object):
         samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample, self.y: y_one_hot})
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes.png')
 
         """ specified condition, random noise """
         n_styles = 10  # must be less than or equal to self.batch_size
@@ -249,7 +253,8 @@ class CVAE(object):
 
             samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample, self.y: y_one_hot})
             save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_class_%d.png' % l)
+                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                        % epoch + '_test_class_%d.png' % l)
 
             samples = samples[si, :, :, :]
 
@@ -265,7 +270,8 @@ class CVAE(object):
                 canvas[s * self.y_dim + c, :, :, :] = all_samples[c * n_styles + s, :, :, :]
 
         save_images(canvas, [n_styles, self.y_dim],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes_style_by_style.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes_style_by_style.png')
 
     @property
     def model_dir(self):
