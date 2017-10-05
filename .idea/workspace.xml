@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CVAE.py" afterPath="$PROJECT_DIR$/CVAE.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DRAGAN.py" afterPath="$PROJECT_DIR$/DRAGAN.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,12 +30,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CVAE.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CVAE.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CVAE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-326">
-              <caret line="273" column="20" lean-forward="false" selection-start-line="273" selection-start-column="20" selection-end-line="273" selection-end-column="20" />
+            <state relative-caret-position="124">
+              <caret line="291" column="44" lean-forward="true" selection-start-line="291" selection-start-column="44" selection-end-line="291" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DRAGAN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DRAGAN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-326">
+              <caret line="243" column="20" lean-forward="false" selection-start-line="243" selection-start-column="20" selection-end-line="243" selection-end-column="20" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,18 +58,6 @@
             <state relative-caret-position="439">
               <caret line="218" column="24" lean-forward="true" selection-start-line="218" selection-start-column="24" selection-end-line="218" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VAE.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VAE.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4325">
-              <caret line="182" column="26" lean-forward="false" selection-start-line="182" selection-start-column="26" selection-end-line="182" selection-end-column="26" />
-              <folding>
-                <element signature="e#23#54#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -142,13 +142,13 @@
         <option value="$PROJECT_DIR$/WGAN.py" />
         <option value="$PROJECT_DIR$/WGAN_GP.py" />
         <option value="$PROJECT_DIR$/EBGAN.py" />
-        <option value="$PROJECT_DIR$/DRAGAN.py" />
         <option value="$PROJECT_DIR$/VAE.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/BEGAN.py" />
         <option value="$PROJECT_DIR$/ACGAN.py" />
         <option value="$PROJECT_DIR$/CGAN.py" />
         <option value="$PROJECT_DIR$/CVAE.py" />
+        <option value="$PROJECT_DIR$/DRAGAN.py" />
       </list>
     </option>
   </component>
@@ -485,7 +485,7 @@
         <state relative-caret-position="4550">
           <caret line="182" column="26" lean-forward="false" selection-start-line="182" selection-start-column="26" selection-end-line="182" selection-end-column="26" />
           <folding>
-            <element signature="e#23#54#0" expanded="true" />
+            <element signature="e#23#54#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -755,19 +755,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DRAGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="206" column="34" lean-forward="true" selection-start-line="206" selection-start-column="34" selection-end-line="206" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VAE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4325">
           <caret line="182" column="26" lean-forward="false" selection-start-line="182" selection-start-column="26" selection-end-line="182" selection-end-column="26" />
           <folding>
-            <element signature="e#23#54#0" expanded="true" />
+            <element signature="e#23#54#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -859,9 +852,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CVAE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-326">
-          <caret line="273" column="20" lean-forward="false" selection-start-line="273" selection-start-column="20" selection-end-line="273" selection-end-column="20" />
+        <state relative-caret-position="124">
+          <caret line="291" column="44" lean-forward="true" selection-start-line="291" selection-start-column="44" selection-end-line="291" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DRAGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="243" column="20" lean-forward="false" selection-start-line="243" selection-start-column="20" selection-end-line="243" selection-end-column="20" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
