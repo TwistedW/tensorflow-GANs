@@ -112,7 +112,7 @@ class DRAGAN(object):
         # get loss for generator
         self.g_loss = tf.reduce_mean(
             tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones_like(D_fake)))
-        
+
 
         """ DRAGAN Loss (Gradient penalty) """
         # This is borrowed from https://github.com/kodalinaveen3/DRAGAN/blob/master/DRAGAN.ipynb
