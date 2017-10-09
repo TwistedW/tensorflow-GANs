@@ -324,7 +324,8 @@ class infoGAN(object):
                 canvas[s * self.len_discrete_code + c, :, :, :] = all_samples[c * n_styles + s, :, :, :]
 
         save_images(canvas, [n_styles, self.len_discrete_code],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes_style_by_style.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes_style_by_style.png')
 
         """ fixed noise """
         assert self.len_continuous_code == 2
