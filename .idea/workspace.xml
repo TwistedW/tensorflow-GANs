@@ -55,8 +55,8 @@
       <file leaf-file-name="infoGAN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/infoGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="265" column="66" lean-forward="false" selection-start-line="265" selection-start-column="66" selection-end-line="265" selection-end-column="66" />
+            <state relative-caret-position="348">
+              <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -906,8 +906,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/infoGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="265" column="66" lean-forward="false" selection-start-line="265" selection-start-column="66" selection-end-line="265" selection-end-column="66" />
+        <state relative-caret-position="348">
+          <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
           <folding />
         </state>
       </provider>
