@@ -263,8 +263,7 @@ class infoGAN(object):
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
                     save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w],
                                 './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
-                                '_train_{:02d}_{:04d}.png'.format(
-                                    epoch, idx))
+                                '_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero
             # non-zero value is only for the first epoch after loading pre-trained model

@@ -56,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/infoGAN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="173">
-              <caret line="265" column="32" lean-forward="false" selection-start-line="265" selection-start-column="32" selection-end-line="265" selection-end-column="32" />
+              <caret line="265" column="66" lean-forward="false" selection-start-line="265" selection-start-column="66" selection-end-line="265" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -907,7 +907,7 @@
     <entry file="file://$PROJECT_DIR$/infoGAN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
-          <caret line="265" column="32" lean-forward="false" selection-start-line="265" selection-start-column="32" selection-end-line="265" selection-end-column="32" />
+          <caret line="265" column="66" lean-forward="false" selection-start-line="265" selection-start-column="66" selection-end-line="265" selection-end-column="66" />
           <folding />
         </state>
       </provider>
