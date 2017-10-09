@@ -353,7 +353,8 @@ class infoGAN(object):
                                     feed_dict={ self.z: z_fixed, self.y: y_one_hot})
 
             save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_class_c1c2_%d.png' % l)
+                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                        % epoch + '_test_class_c1c2_%d.png' % l)
 
     @property
     def model_dir(self):
