@@ -271,7 +271,8 @@ class CGAN(object):
                 canvas[s * self.y_dim + c, :, :, :] = all_samples[c * n_styles + s, :, :, :]
 
         save_images(canvas, [n_styles, self.y_dim],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes_style_by_style.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes_style_by_style.png')
 
     @property
     def model_dir(self):
