@@ -187,11 +187,13 @@ class BEGAN(object):
                 self.writer.add_summary(summary_str, counter)
 
                 # update G network
-                _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum, self.g_loss], feed_dict={self.z: batch_z})
+                _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum, self.g_loss],
+                                                       feed_dict={self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # update k
-                _, summary_str, M_value, k_value = self.sess.run([self.update_k, self.p_sum, self.M, self.k], feed_dict={self.inputs: batch_images, self.z: batch_z})
+                _, summary_str, M_value, k_value = self.sess.run([self.update_k, self.p_sum, self.M, self.k],
+                                                                 feed_dict={self.inputs: batch_images, self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # display training status
@@ -235,7 +237,8 @@ class BEGAN(object):
         samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample})
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes.png')
 
     @property
     def model_dir(self):
