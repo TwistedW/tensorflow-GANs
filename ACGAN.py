@@ -338,4 +338,3 @@ class ACGAN(object):
         else:
             print(" [*] Failed to find a checkpoint")
             return False, 0
-#if __name__=='__main__':
