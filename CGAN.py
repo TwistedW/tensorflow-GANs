@@ -254,7 +254,8 @@ class CGAN(object):
 
             samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample, self.y: y_one_hot})
             save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_class_%d.png' % l)
+                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                        % epoch + '_test_class_%d.png' % l)
 
             samples = samples[si, :, :, :]
 
