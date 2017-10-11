@@ -172,8 +172,10 @@ class VAE(object):
                 batch_z = prior.gaussian(self.batch_size, self.z_dim)
 
                 # update autoencoder
-                _, summary_str, loss, nll_loss, kl_loss = self.sess.run([self.optim, self.merged_summary_op, self.loss, self.neg_loglikelihood, self.KL_divergence],
-                                               feed_dict={self.inputs: batch_images, self.z: batch_z})
+                _, summary_str, loss, nll_loss, kl_loss = self.sess.run([self.optim, self.merged_summary_op, self.loss,
+                                                                         self.neg_loglikelihood, self.KL_divergence],
+                                                                        feed_dict={self.inputs: batch_images,
+                                                                        self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # display training status
