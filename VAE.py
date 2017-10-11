@@ -221,7 +221,8 @@ class VAE(object):
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
                     check_folder(
-                        self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes.png')
+                        self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch +
+                    '_test_all_classes.png')
 
         """ learned manifold """
         if self.z_dim == 2:
@@ -245,7 +246,8 @@ class VAE(object):
                     id_tot = np.concatenate((id_tot, batch_labels), axis=0)
 
             save_scattered_image(z_tot, id_tot, -4, 4, name=check_folder(
-                self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_learned_manifold.png')
+                self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch +
+                                                            '_learned_manifold.png')
 
     @property
     def model_dir(self):

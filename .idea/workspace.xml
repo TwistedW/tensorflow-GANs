@@ -77,8 +77,8 @@
       <file leaf-file-name="VAE.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VAE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-442">
-              <caret line="196" column="68" lean-forward="false" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="68" />
+            <state relative-caret-position="-340">
+              <caret line="249" column="60" lean-forward="false" selection-start-line="249" selection-start-column="60" selection-end-line="249" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -909,8 +909,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VAE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="196" column="68" lean-forward="false" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="68" />
+        <state relative-caret-position="-340">
+          <caret line="249" column="60" lean-forward="false" selection-start-line="249" selection-start-column="60" selection-end-line="249" selection-end-column="60" />
           <folding />
         </state>
       </provider>
