@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b61e5a-dbd2-4936-8337-cfed3389a5c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CGAN.py" afterPath="$PROJECT_DIR$/CGAN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,6 +18,30 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ACGAN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ACGAN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8250">
+              <caret line="330" column="13" lean-forward="false" selection-start-line="330" selection-start-column="13" selection-end-line="330" selection-end-column="13" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="30" column="86" lean-forward="false" selection-start-line="30" selection-start-column="86" selection-end-line="30" selection-end-column="86" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CVAE.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CVAE.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,18 +84,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infoGAN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infoGAN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7725">
-              <caret line="316" column="37" lean-forward="false" selection-start-line="316" selection-start-column="37" selection-end-line="316" selection-end-column="37" />
-              <folding>
-                <element signature="e#23#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LSGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LSGAN.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,33 +104,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="5875">
               <caret line="242" column="20" lean-forward="false" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EBGAN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EBGAN.py">
+      <file leaf-file-name="BEGAN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BEGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-              <folding>
-                <element signature="e#23#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GAN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GAN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6125">
-              <caret line="252" column="13" lean-forward="false" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
+            <state relative-caret-position="-326">
+              <caret line="240" column="20" lean-forward="false" selection-start-line="240" selection-start-column="20" selection-end-line="240" selection-end-column="20" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -136,7 +136,6 @@
       <list>
         <option value="$PROJECT_DIR$/WGAN.py" />
         <option value="$PROJECT_DIR$/WGAN_GP.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/EBGAN.py" />
         <option value="$PROJECT_DIR$/GAN.py" />
         <option value="$PROJECT_DIR$/DRAGAN.py" />
@@ -147,6 +146,7 @@
         <option value="$PROJECT_DIR$/VAE.py" />
         <option value="$PROJECT_DIR$/CVAE.py" />
         <option value="$PROJECT_DIR$/CGAN.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -474,6 +474,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -558,6 +561,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -632,6 +638,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,6 +693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -729,6 +741,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -751,13 +766,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-741708071/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -772,26 +780,6 @@
             <caret line="70" column="71" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="83" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BEGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5825">
-          <caret line="240" column="20" lean-forward="false" selection-start-line="240" selection-start-column="20" selection-end-line="240" selection-end-column="20" />
-          <folding>
-            <element signature="e#23#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ACGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8075">
-          <caret line="330" column="13" lean-forward="false" selection-start-line="330" selection-start-column="13" selection-end-line="330" selection-end-column="13" />
-          <folding>
-            <element signature="e#23#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,9 +875,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="5875">
           <caret line="242" column="20" lean-forward="false" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BEGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="240" column="20" lean-forward="false" selection-start-line="240" selection-start-column="20" selection-end-line="240" selection-end-column="20" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ACGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8250">
+          <caret line="330" column="13" lean-forward="false" selection-start-line="330" selection-start-column="13" selection-end-line="330" selection-end-column="13" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="30" column="86" lean-forward="false" selection-start-line="30" selection-start-column="86" selection-end-line="30" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
