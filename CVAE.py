@@ -118,7 +118,8 @@ class CVAE(object):
         self.out = tf.clip_by_value(out, 1e-8, 1 - 1e-8)
 
         # loss
-        marginal_likelihood = tf.reduce_sum(self.inputs * tf.log(self.out) + (1 - self.inputs) * tf.log(1 - self.out), [1, 2])
+        marginal_likelihood = tf.reduce_sum(self.inputs * tf.log(self.out) + (1 - self.inputs) * tf.log(1 - self.out),
+                                            [1, 2])
         KL_divergence = 0.5 * tf.reduce_sum(tf.square(mu) + tf.square(sigma) - tf.log(1e-8 + tf.square(sigma)) - 1, [1])
 
         self.neg_loglikelihood = -tf.reduce_mean(marginal_likelihood)
