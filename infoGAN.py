@@ -192,8 +192,8 @@ class infoGAN(object):
         # graph inputs for visualize training results
         self.sample_z = np.random.uniform(-1, 1, size=(self.batch_size , self.z_dim))
         self.test_labels = self.data_y[0:self.batch_size]
-        self.test_codes = np.concatenate((self.test_labels, np.zeros([self.batch_size, self.len_continuous_code])),
-                                           axis=1)
+        self.test_codes = np.concatenate((self.test_labels,
+                                          np.zeros([self.batch_size, self.len_continuous_code])),axis=1)
 
         # saver to save model
         self.saver = tf.train.Saver()
