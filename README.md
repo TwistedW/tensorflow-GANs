@@ -1,4 +1,4 @@
-###The original code address
+# The original code address
 https://github.com/hwalsuklee/tensorflow-generative-model-collections
 # tensorflow-generative-model-collections
 Tensorflow implementation of various GANs and VAEs.
