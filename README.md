@@ -1,3 +1,5 @@
+# The original code address
+https://github.com/hwalsuklee/tensorflow-generative-model-collections
 # tensorflow-generative-model-collections
 Tensorflow implementation of various GANs and VAEs.
 
@@ -227,6 +229,8 @@ The following shows basic folder structure.
 ├── logs # log files for tensorboard to be saved here
 └── checkpoint # model files to be saved here
 ```
+### Training Tips
+Use SGD for discriminator and ADAM for generator
 
 ## Acknowledgements
 This implementation has been based on [this repository](https://github.com/carpedm20/DCGAN-tensorflow) and tested with Tensorflow over ver1.0 on Windows 10 and Ubuntu 14.04.
