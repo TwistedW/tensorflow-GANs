@@ -1,1 +1,44 @@
-prepare
+Ubuntu16.04安装cuda8.0已经环境配置
+
+sudo ./cuda_8.0.44_linux.run --tmpdir=/tmp
+Do you accept the previously read EULA?
+accept/decline/quit: accept
+
+Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48?
+(y)es/(n)o/(q)uit: n
+
+Install the CUDA 8.0 Toolkit?
+(y)es/(n)o/(q)uit: y
+
+Enter Toolkit Location
+[ default is /usr/local/cuda-8.0 ]:
+
+Do you want to install a symbolic link at /usr/local/cuda?
+(y)es/(n)o/(q)uit: y
+
+Install the CUDA 8.0 Samples?
+(y)es/(n)o/(q)uit: y
+
+export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:$CUDA_HOME/bin
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+保存退出，运行source ~/.bashrc 
+测试是否安装成功
+// 如果怕把samples搞坏了那就先搞一个备份，在备份里搞
+cd /usr/local/cuda/samples/1_Utilities/deviceQuery 
+sudo make //这部分报的错误可以忽略，往往是fidemake文件下的小问题
+./deviceQuery
+
+cuDNN安装
+tar -xvf cudnn-8.0-linux-x64-v5.1.tgz
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+sudo chmod a+r /usr/local/cuda/include/cudnn.h
+sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+//环境配置特别重要
+//如果运行tensorflow出现了问题，比如数据流的问题可尝试以下解决方案
+cd /usr/local/cuda/samples/7_CUDALibraries/simpleCUBLAS
+make
+./simpleCUBLAS
+cd ~
+sudo rm -rf ~/.nv/
