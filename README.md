@@ -206,7 +206,7 @@ Please notice that dimension of noise-vector z is 2.
 VAE | <img src = 'assets/fashion_mnist_results/learned_manifold/VAE_epoch000_learned_manifold.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/learned_manifold/VAE_epoch009_learned_manifold.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/learned_manifold/VAE_epoch024_learned_manifold.png' height = '230px'>
 
 ### Results for celebA
-(to be added)
+(We are building, GAN has been adapted)
 
 ## Folder structure
 The following shows basic folder structure.
