@@ -107,7 +107,7 @@ infoGAN tends to ignore noise-vector. It results in that various style within th
 <td><img src = 'assets/fashion_mnist_results/infogan/infoGAN_epoch039_test_class_c1c2_8.png' height = '230px'></td>
 </table>
 
-### Some results for celebA
+### Some results for celebA or cifar10
 (to be added)
 
 ## Variational Auto-Encoders (VAEs)
