@@ -53,8 +53,8 @@
       <file leaf-file-name="infoGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infoGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="143" column="36" lean-forward="true" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
+            <state relative-caret-position="3400">
+              <caret line="143" column="36" lean-forward="false" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -65,9 +65,12 @@
       <file leaf-file-name="GAN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1833">
-              <caret line="252" column="13" lean-forward="false" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="361">
+              <caret line="283" column="13" lean-forward="false" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
+              <folding>
+                <marker date="1512448342000" expanded="true" signature="298:1161" ph="..." />
+                <marker date="1512448342000" expanded="true" signature="716:1161" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +100,8 @@
       <file leaf-file-name="VAE.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VAE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5950">
-              <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+            <state relative-caret-position="6425">
+              <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -109,9 +112,11 @@
       <file leaf-file-name="CGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5875">
-              <caret line="242" column="20" lean-forward="false" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="6700">
+              <caret line="275" column="20" lean-forward="false" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="20" />
+              <folding>
+                <marker date="1512501544000" expanded="true" signature="286:1451" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,7 +144,6 @@
         <option value="$PROJECT_DIR$/WGAN.py" />
         <option value="$PROJECT_DIR$/WGAN_GP.py" />
         <option value="$PROJECT_DIR$/EBGAN.py" />
-        <option value="$PROJECT_DIR$/GAN.py" />
         <option value="$PROJECT_DIR$/DRAGAN.py" />
         <option value="$PROJECT_DIR$/BEGAN.py" />
         <option value="$PROJECT_DIR$/ACGAN.py" />
@@ -149,6 +153,7 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/infoGAN.py" />
         <option value="$PROJECT_DIR$/VAE.py" />
+        <option value="$PROJECT_DIR$/GAN.py" />
       </list>
     </option>
   </component>
@@ -181,6 +186,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -195,7 +201,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,6 +433,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -568,7 +574,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4725">
           <caret line="189" column="36" lean-forward="false" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
-          <folding />
+          <folding>
+            <marker date="1512501544000" expanded="true" signature="286:1451" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -646,7 +654,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4725">
           <caret line="189" column="36" lean-forward="false" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
-          <folding />
+          <folding>
+            <marker date="1512501544000" expanded="true" signature="286:1451" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -791,9 +801,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5875">
-          <caret line="242" column="20" lean-forward="false" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="6700">
+          <caret line="275" column="20" lean-forward="false" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="20" />
+          <folding>
+            <marker date="1512501544000" expanded="true" signature="286:1451" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -848,8 +860,8 @@
     <entry file="file://$PROJECT_DIR$/bash.exe.stackdump" />
     <entry file="file://$PROJECT_DIR$/VAE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5950">
-          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+        <state relative-caret-position="6425">
+          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
@@ -858,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/infoGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="143" column="36" lean-forward="true" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
+        <state relative-caret-position="3400">
+          <caret line="143" column="36" lean-forward="false" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
@@ -868,9 +880,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1833">
-          <caret line="252" column="13" lean-forward="false" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="361">
+          <caret line="283" column="13" lean-forward="false" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
+          <folding>
+            <marker date="1512448342000" expanded="true" signature="298:1161" ph="..." />
+            <marker date="1512448342000" expanded="true" signature="716:1161" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
