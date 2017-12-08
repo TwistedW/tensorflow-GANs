@@ -107,7 +107,7 @@ infoGAN tends to ignore noise-vector. It results in that various style within th
 <td><img src = 'assets/fashion_mnist_results/infogan/infoGAN_epoch039_test_class_c1c2_8.png' height = '230px'></td>
 </table>
 
-### Some results for celebA
+### Some results for celebA or cifar10
 (to be added)
 
 ## Variational Auto-Encoders (VAEs)
@@ -206,7 +206,7 @@ Please notice that dimension of noise-vector z is 2.
 VAE | <img src = 'assets/fashion_mnist_results/learned_manifold/VAE_epoch000_learned_manifold.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/learned_manifold/VAE_epoch009_learned_manifold.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/learned_manifold/VAE_epoch024_learned_manifold.png' height = '230px'>
 
 ### Results for celebA
-(to be added)
+(We are building, GAN has been adapted)
 
 ## Folder structure
 The following shows basic folder structure.
