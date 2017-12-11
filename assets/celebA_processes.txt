@@ -1,1 +1,4 @@
 CelebA class
+glass
+black_Hair
+Gray_Hair
