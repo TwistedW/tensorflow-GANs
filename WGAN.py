@@ -19,6 +19,7 @@ class WGAN(object):
         self.batch_size = batch_size
         self.model_name = "WGAN"     # name for checkpoint
 
+        # 加载mnist数据集并且指定各参数
         if dataset_name == 'mnist' or dataset_name == 'fashion-mnist':
             # parameters
             self.input_height = 28
@@ -47,6 +48,7 @@ class WGAN(object):
         else:
             raise NotImplementedError
 
+    # 判别器函数(64,input_height,input_width,c_dim)-->(64,1)
     def discriminator(self, x, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)4c2s-(128)4c2s_BL-FC1024_BL-FC1_S
@@ -61,6 +63,7 @@ class WGAN(object):
 
             return out, out_logit, net
 
+    # 生成器函数，对于不同的数据集判别器有不同的网络(64,z_dim)-->(64,output_height,output_width,c_dim)
     def generator(self, z, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : FC1024_BR-FC7x7x128_BR-(64)4dc2s_BR-(1)4dc2s_S
@@ -98,12 +101,18 @@ class WGAN(object):
         D_fake, D_fake_logits, _ = self.discriminator(G, is_training=True, reuse=True)
 
         # get loss for discriminator
+        # 对于D_loss,L(D) = E[D(x)] - E[D(G(z))], 如果min的话就取负号就OK，本处正是这么处理的,我感觉可也可以不取负号，本处影响不大
         d_loss_real = - tf.reduce_mean(D_real)
         d_loss_fake = tf.reduce_mean(D_fake)
+
+        # 未加判别器sigmoid，可测试使用
+        # d_loss_real = - tf.reduce_mean(D_real_logits)
+        # d_loss_fake = tf.reduce_mean(D_fake_logits)
 
         self.d_loss = d_loss_real + d_loss_fake
 
         # get loss for generator
+        # 对于G_loss,L(G) = E[D(G(z))]
         self.g_loss = - d_loss_fake
 
         """ Training """
@@ -178,15 +187,15 @@ class WGAN(object):
                 self.writer.add_summary(summary_str, counter)
 
                 # update G network
+                # 检查更新生成器利用WGAN设置参数
                 if (counter - 1) % self.disc_iters == 0:
                     _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum, self.g_loss], feed_dict={self.z: batch_z})
                     self.writer.add_summary(summary_str, counter)
 
                 # display training status
                 counter += 1
-                if idx % 200 == 0:
-                    print("Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss: %.8f, g_loss: %.8f" \
-                          % (epoch, idx, self.num_batches, time.time() - start_time, d_loss, g_loss))
+                print("Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss: %.8f, g_loss: %.8f" \
+                      % (epoch, idx, self.num_batches, time.time() - start_time, d_loss, g_loss))
 
                 # save training results for every 300 steps
                 if np.mod(counter, 300) == 0:
@@ -196,8 +205,8 @@ class WGAN(object):
                     manifold_h = int(np.floor(np.sqrt(tot_num_samples)))
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
                     save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w],
-                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_train_{:02d}_{:04d}.png'.format(
-                                    epoch, idx))
+                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name
+                                + '_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero
             # non-zero value is only for the first epoch after loading pre-trained model
@@ -223,7 +232,8 @@ class WGAN(object):
         samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample})
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
+                    % epoch + '_test_all_classes.png')
 
     @property
     def model_dir(self):
@@ -237,7 +247,7 @@ class WGAN(object):
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
 
-        self.saver.save(self.sess,os.path.join(checkpoint_dir, self.model_name+'.model'), global_step=step)
+        self.saver.save(self.sess, os.path.join(checkpoint_dir, self.model_name+'.model'), global_step=step)
 
     def load(self, checkpoint_dir):
         import re
