@@ -105,7 +105,7 @@ class WGAN(object):
         d_loss_real = - tf.reduce_mean(D_real)
         d_loss_fake = tf.reduce_mean(D_fake)
 
-        # 未加判别器sigmoid，可测试使用
+        # 未加判别器sigmoid，可测试使用,结果差距并不是很明显
         # d_loss_real = - tf.reduce_mean(D_real_logits)
         # d_loss_fake = tf.reduce_mean(D_fake_logits)
 
