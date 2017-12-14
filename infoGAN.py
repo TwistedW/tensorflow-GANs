@@ -9,7 +9,8 @@ from ops import *
 from utils import *
 
 class infoGAN(object):
-    def __init__(self, sess, epoch, batch_size, z_dim, dataset_name, checkpoint_dir, result_dir, log_dir, SUPERVISED=True):
+    # SUPERVISED是设置起来用来决定是否利用标签来训练模型
+    def __init__(self, sess, epoch, batch_size, z_dim, dataset_name, checkpoint_dir, result_dir, log_dir, SUPERVISED=False):
         self.sess = sess
         self.dataset_name = dataset_name
         self.checkpoint_dir = checkpoint_dir
@@ -27,7 +28,7 @@ class infoGAN(object):
             self.output_width = 28
 
             self.z_dim = z_dim         # dimension of noise-vector
-            self.y_dim = 12         # dimension of code-vector (label+two features)
+            self.y_dim = 12         # dimension of code-vector (label+two features)为什么采取12个呢，除了类别外加了两个特征
             self.c_dim = 1
 
             self.SUPERVISED = SUPERVISED # if it is true, label info is directly used for code
@@ -40,8 +41,8 @@ class infoGAN(object):
             self.sample_num = 64  # number of generated images to be saved
 
             # code
-            self.len_discrete_code = 10  # categorical distribution (i.e. label)
-            self.len_continuous_code = 2  # gaussian distribution (e.g. rotation, thickness)
+            self.len_discrete_code = 10  # categorical distribution (i.e. label) 类别
+            self.len_continuous_code = 2  # gaussian distribution (e.g. rotation, thickness) 旋转，字体
 
             # load mnist
             self.data_X, self.data_y = load_mnist(self.dataset_name)
@@ -51,6 +52,7 @@ class infoGAN(object):
         else:
             raise NotImplementedError
 
+    # 分类器,实现(64,x)-->(64,64)-->(64,12)的变换，确定分类结果
     def classifier(self, x, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)5c2s-(128)5c2s_BL-FC1024_BL-FC128_BL-FC12S’
@@ -64,6 +66,7 @@ class infoGAN(object):
 
             return out, out_logit
 
+    # 判别器与之前模型的作用完全一样
     def discriminator(self, x, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)4c2s-(128)4c2s_BL-FC1024_BL-FC1_S
@@ -78,6 +81,7 @@ class infoGAN(object):
 
             return out, out_logit, net
 
+    # 生成器与CGAN一样，用于处理带标签的生成
     def generator(self, z, y, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : FC1024_BR-FC7x7x128_BR-(64)4dc2s_BR-(1)4dc2s_S
@@ -117,10 +121,12 @@ class infoGAN(object):
         # output of D for real images
         D_real, D_real_logits, _ = self.discriminator(self.inputs, is_training=True, reuse=False)
 
+        # 取鉴别器的最后一层作为类别信息的判断
         # output of D for fake images
         G = self.generator(self.z, self.y, is_training=True, reuse=False)
         D_fake, D_fake_logits, input4classifier_fake = self.discriminator(G, is_training=True, reuse=True)
 
+        # infoGAN的损失函数可以分为3块，D，G和C，难点在于损失C的求解
         # get loss for discriminator
         d_loss_real = tf.reduce_mean(
             tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones_like(D_real)))
@@ -133,20 +139,26 @@ class infoGAN(object):
         self.g_loss = tf.reduce_mean(
             tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones_like(D_fake)))
 
+        # 此步用于确定分类后的类别信息
         ## 2. Information Loss
         code_fake, code_logit_fake = self.classifier(input4classifier_fake, is_training=True, reuse=False)
 
         # discrete code : categorical
+        # 记录前十个信息量为mnist数字类别
         disc_code_est = code_logit_fake[:, :self.len_discrete_code]
+        # 记录标签的类别,分为有监督和无监督两类，由SUPERVISED决定
         disc_code_tg = self.y[:, :self.len_discrete_code]
+        # q_disc_loss=disc_code_tg*(-log(sigmoid(disc_code_est)))+(1-disc_code_tg)*(-log(1-sigmoid(disc_code_est)))
         q_disc_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=disc_code_est, labels=disc_code_tg))
 
         # continuous code : gaussian
+        # 计算除交叉商的高斯函数部分损失，用于完善q_loss
         cont_code_est = code_fake[:, self.len_discrete_code:]
         cont_code_tg = self.y[:, self.len_discrete_code:]
         q_cont_loss = tf.reduce_mean(tf.reduce_sum(tf.square(cont_code_tg - cont_code_est), axis=1))
 
         # get information loss
+        # 类别损失与特征损失求和
         self.q_loss = q_disc_loss + q_cont_loss
 
         """ Training """
@@ -157,6 +169,7 @@ class infoGAN(object):
         q_vars = [var for var in t_vars if ('d_' in var.name) or ('c_' in var.name) or ('g_' in var.name)]
 
         # optimizers
+        # 同时训练三个损失函数达到最小
         with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
             self.d_optim = tf.train.AdamOptimizer(self.learning_rate, beta1=self.beta1) \
                 .minimize(self.d_loss, var_list=d_vars)
@@ -192,8 +205,8 @@ class infoGAN(object):
         # graph inputs for visualize training results
         self.sample_z = np.random.uniform(-1, 1, size=(self.batch_size , self.z_dim))
         self.test_labels = self.data_y[0:self.batch_size]
-        self.test_codes = np.concatenate((self.test_labels,
-                                          np.zeros([self.batch_size, self.len_continuous_code])),axis=1)
+        self.test_codes = np.concatenate((self.test_labels, np.zeros([self.batch_size, self.len_continuous_code])),
+                                           axis=1)
 
         # saver to save model
         self.saver = tf.train.Saver()
@@ -226,10 +239,12 @@ class infoGAN(object):
                 if self.SUPERVISED == True:
                     batch_labels = self.data_y[idx * self.batch_size:(idx + 1) * self.batch_size]
                 else:
+                    # 如果是无监督学习的话，自动生成随机标签信息
+                    # np.random.multinomial多项式分布，本处为10次事件中发生事件的概率为1/10，则10次中仅有一次发生而且是完全随机的
                     batch_labels = np.random.multinomial(1,
                                                          self.len_discrete_code * [float(1.0 / self.len_discrete_code)],
                                                          size=[self.batch_size])
-
+                #另外两个特征信息完全由均值分布决定
                 batch_codes = np.concatenate((batch_labels, np.random.uniform(-1, 1, size=(self.batch_size, 2))),
                                              axis=1)
 
@@ -250,20 +265,21 @@ class infoGAN(object):
 
                 # display training status
                 counter += 1
-                if idx % 200 == 0:
+                if np.mod(counter, 50) == 0:
                     print("Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss: %.8f, g_loss: %.8f" \
                           % (epoch, idx, self.num_batches, time.time() - start_time, d_loss, g_loss))
 
                 # save training results for every 300 steps
                 if np.mod(counter, 300) == 0:
+                    # 只生成类别与另外两个特征信息无关
                     samples = self.sess.run(self.fake_images,
                                             feed_dict={self.z: self.sample_z, self.y: self.test_codes})
                     tot_num_samples = min(self.sample_num, self.batch_size)
                     manifold_h = int(np.floor(np.sqrt(tot_num_samples)))
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
                     save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w],
-                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
-                                '_train_{:02d}_{:04d}.png'.format(epoch, idx))
+                                './' + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name
+                                + '_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero
             # non-zero value is only for the first epoch after loading pre-trained model
@@ -278,17 +294,20 @@ class infoGAN(object):
         # save model for final step
         self.save(self.checkpoint_dir, counter)
 
+    # 本函数用于验证infoGAN的实现
     def visualize_results(self, epoch):
         tot_num_samples = min(self.sample_num, self.batch_size)
         image_frame_dim = int(np.floor(np.sqrt(tot_num_samples)))
 
         """ random noise, random discrete code, fixed continuous code """
+        # 创建随机类别标签（64,10）
         y = np.random.choice(self.len_discrete_code, self.batch_size)
         y_one_hot = np.zeros((self.batch_size, self.y_dim))
         y_one_hot[np.arange(self.batch_size), y] = 1
 
         z_sample = np.random.uniform(-1, 1, size=(self.batch_size, self.z_dim))
 
+        # 仅显示类别
         samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample, self.y: y_one_hot})
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
@@ -301,15 +320,16 @@ class infoGAN(object):
         np.random.seed()
         si = np.random.choice(self.batch_size, n_styles)
 
+        # 此处仅显示正常的图像类别
         for l in range(self.len_discrete_code):
             y = np.zeros(self.batch_size, dtype=np.int64) + l
             y_one_hot = np.zeros((self.batch_size, self.y_dim))
             y_one_hot[np.arange(self.batch_size), y] = 1
 
             samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample, self.y: y_one_hot})
-            # save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-            #check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch +
-            # '_test_class_%d.png' % l)
+            save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
+                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
+                        '_epoch%03d' % epoch + '_test_class_%d.png' % l)
 
             samples = samples[si, :, :, :]
 
@@ -325,8 +345,8 @@ class infoGAN(object):
                 canvas[s * self.len_discrete_code + c, :, :, :] = all_samples[c * n_styles + s, :, :, :]
 
         save_images(canvas, [n_styles, self.len_discrete_code],
-                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
-                    % epoch + '_test_all_classes_style_by_style.png')
+                    check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch
+                    + '_test_all_classes_style_by_style.png')
 
         """ fixed noise """
         assert self.len_continuous_code == 2
@@ -334,7 +354,7 @@ class infoGAN(object):
         c1 = np.linspace(-1, 1, image_frame_dim)
         c2 = np.linspace(-1, 1, image_frame_dim)
         xv, yv = np.meshgrid(c1, c2)
-        xv = xv[:image_frame_dim,:image_frame_dim]
+        xv = xv[:image_frame_dim, :image_frame_dim]
         yv = yv[:image_frame_dim, :image_frame_dim]
 
         c1 = xv.flatten()
@@ -354,15 +374,17 @@ class infoGAN(object):
                                     feed_dict={ self.z: z_fixed, self.y: y_one_hot})
 
             save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
-                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d'
-                        % epoch + '_test_class_c1c2_%d.png' % l)
+                        check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
+                        '_epoch%03d' % epoch + '_test_class_c1c2_%d.png' % l)
 
     @property
+    # 加载创建固定模型下的路径，本处为CGAN下的训练
     def model_dir(self):
         return "{}_{}_{}_{}".format(
             self.model_name, self.dataset_name,
             self.batch_size, self.z_dim)
 
+    # 本函数的目的是在于保存训练模型后的checkpoint
     def save(self, checkpoint_dir, step):
         checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir, self.model_name)
 
@@ -371,6 +393,7 @@ class infoGAN(object):
 
         self.saver.save(self.sess,os.path.join(checkpoint_dir, self.model_name+'.model'), global_step=step)
 
+    # 本函数的意义在于读取训练好的模型参数的checkpoint
     def load(self, checkpoint_dir):
         import re
         print(" [*] Reading checkpoints...")

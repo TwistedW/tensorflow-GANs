@@ -39,7 +39,7 @@ class ACGAN(object):
 
             # code
             self.len_discrete_code = 10  # categorical distribution (i.e. label)
-            self.len_continuous_code = 2  # gaussian distribution (e.g. rotation, thickness)
+            self.len_continuous_code = 2  # gaussian distribution (e.g. rotation, thickness)本模型用不到
 
             # load mnist
             self.data_X, self.data_y = load_mnist(self.dataset_name)
@@ -49,6 +49,7 @@ class ACGAN(object):
         else:
             raise NotImplementedError
 
+    # 分类器，用于ACGAN的标签处理 (64,1024)-->(64,10)
     def classifier(self, x, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)5c2s-(128)5c2s_BL-FC1024_BL-FC128_BL-FC12S’
@@ -61,6 +62,7 @@ class ACGAN(object):
 
             return out, out_logit
 
+    # 判别器 (64,input_height,input_width,c_dim)-->(64,1)
     def discriminator(self, x, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)4c2s-(128)4c2s_BL-FC1024_BL-FC1_S
@@ -75,6 +77,7 @@ class ACGAN(object):
 
             return out, out_logit, net
 
+    # 生成器函数，对于不同的数据集判别器有不同的网络(64,z_dim)-->(64,output_height,output_width,c_dim)
     def generator(self, z, y, is_training=True, reuse=False):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : FC1024_BR-FC7x7x128_BR-(64)4dc2s_BR-(1)4dc2s_S
@@ -110,6 +113,7 @@ class ACGAN(object):
         self.z = tf.placeholder(tf.float32, [bs, self.z_dim], name='z')
 
         """ Loss Function """
+        # 这里的reuse的使用为reuse == True时，作用域是为重用变量所设置
         ## 1. GAN Loss
         # output of D for real images
         D_real, D_real_logits, input4classifier_real = self.discriminator(self.inputs, is_training=True, reuse=False)
@@ -119,6 +123,8 @@ class ACGAN(object):
         D_fake, D_fake_logits, input4classifier_fake = self.discriminator(G, is_training=True, reuse=True)
 
         # get loss for discriminator
+        # max(E[log(1-D(G(z)))])-->min(-E[log(1-D(G(z)))])
+        # d_loss_real=-E[log(sigmoid(D_real_logits))]等价于d_loss_real=-E[log(D(x))]
         d_loss_real = tf.reduce_mean(
             tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones_like(D_real)))
         d_loss_fake = tf.reduce_mean(
@@ -141,6 +147,7 @@ class ACGAN(object):
         q_fake_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=code_logit_fake, labels=self.y))
 
         # get information loss
+        # 标签信息损失
         self.q_loss = q_fake_loss + q_real_loss
 
         """ Training """
@@ -190,9 +197,6 @@ class ACGAN(object):
         # saver to save model
         self.saver = tf.train.Saver()
 
-        # summary writer
-        self.writer = tf.summary.FileWriter(self.log_dir + '/' + self.model_name, self.sess.graph)
-
         # restore check-point if it exits
         could_load, checkpoint_counter = self.load(self.checkpoint_dir)
         if could_load:
@@ -200,11 +204,16 @@ class ACGAN(object):
             start_batch_id = checkpoint_counter - start_epoch * self.num_batches
             counter = checkpoint_counter
             print(" [*] Load SUCCESS")
+
         else:
             start_epoch = 0
             start_batch_id = 0
             counter = 1
             print(" [!] Load failed...")
+
+        if start_epoch != self.epoch:
+            # summary writer
+            self.writer = tf.summary.FileWriter(self.log_dir + '/' + self.model_name, self.sess.graph)
 
         # loop for epoch
         start_time = time.time()
@@ -213,7 +222,7 @@ class ACGAN(object):
             # get batch data
             for idx in range(start_batch_id, self.num_batches):
                 batch_images = self.data_X[idx*self.batch_size:(idx+1)*self.batch_size]
-                batch_codes = self.data_y[idx * self.batch_size:(idx + 1) * self.batch_size]
+                batch_codes = self.data_y[idx*self.batch_size:(idx+1)*self.batch_size]
 
                 batch_z = np.random.uniform(-1, 1, [self.batch_size, self.z_dim]).astype(np.float32)
 
@@ -232,7 +241,7 @@ class ACGAN(object):
 
                 # display training status
                 counter += 1
-                if idx%200==0:
+                if np.mod(counter, 50) == 0:
                     print("Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss: %.8f, g_loss: %.8f" \
                           % (epoch, idx, self.num_batches, time.time() - start_time, d_loss, g_loss))
 
@@ -243,9 +252,9 @@ class ACGAN(object):
                     tot_num_samples = min(self.sample_num, self.batch_size)
                     manifold_h = int(np.floor(np.sqrt(tot_num_samples)))
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
-                    save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w], './'
-                                + check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
-                                '_train_{:02d}_{:04d}.png'.format(epoch, idx))
+                    save_images(samples[:manifold_h * manifold_w, :, :, :], [manifold_h, manifold_w], './' +
+                                check_folder(self.result_dir + '/' + self.model_dir) + '/' +
+                                self.model_name + '_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero
             # non-zero value is only for the first epoch after loading pre-trained model
@@ -261,6 +270,7 @@ class ACGAN(object):
         self.save(self.checkpoint_dir, counter)
 
     def visualize_results(self, epoch):
+        # 输入任意的标签和噪声，生成一张图片
         tot_num_samples = min(self.sample_num, self.batch_size)
         image_frame_dim = int(np.floor(np.sqrt(tot_num_samples)))
         z_sample = np.random.uniform(-1, 1, size=(self.batch_size, self.z_dim))
@@ -303,18 +313,21 @@ class ACGAN(object):
         canvas = np.zeros_like(all_samples)
         for s in range(n_styles):
             for c in range(self.len_discrete_code):
-                canvas[s * self.len_discrete_code + c, :, :, :] = all_samples[c * n_styles + s, :, :, :]
+                canvas[:, :, :, :] = all_samples[:, :, :, :]
+                #canvas[s * self.len_discrete_code + c, :, :, :] = all_samples[c * n_styles + s, :, :, :]
 
         save_images(canvas, [n_styles, self.len_discrete_code],
                     check_folder(self.result_dir + '/' + self.model_dir) + '/' + self.model_name +
                     '_epoch%03d' % epoch + '_test_all_classes_style_by_style.png')
 
     @property
+    # 加载创建固定模型下的路径，本处为GAN下的训练
     def model_dir(self):
         return "{}_{}_{}_{}".format(
             self.model_name, self.dataset_name,
             self.batch_size, self.z_dim)
 
+    # 本函数的目的是在于保存训练模型后的checkpoint
     def save(self, checkpoint_dir, step):
         checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir, self.model_name)
 
@@ -323,6 +336,7 @@ class ACGAN(object):
 
         self.saver.save(self.sess,os.path.join(checkpoint_dir, self.model_name+'.model'), global_step=step)
 
+    # 本函数的意义在于读取训练好的模型参数的checkpoint
     def load(self, checkpoint_dir):
         import re
         print(" [*] Reading checkpoints...")
@@ -338,3 +352,15 @@ class ACGAN(object):
         else:
             print(" [*] Failed to find a checkpoint")
             return False, 0
+
+    def train_check(self):
+        import re
+        checkpoint_dir = os.path.join(self.checkpoint_dir, self.model_dir, self.model_name)
+        ckpt = tf.train.get_checkpoint_state(checkpoint_dir)
+        if ckpt and ckpt.model_checkpoint_path:
+            ckpt_name = os.path.basename(ckpt.model_checkpoint_path)
+            self.saver.restore(self.sess, os.path.join(checkpoint_dir, ckpt_name))
+            counter = int(next(re.finditer("(\d+)(?!.*\d)", ckpt_name)).group(0))
+            start_epoch = (int)(counter / self.num_batches)
+        if start_epoch == self.epoch:
+            print(" [*] Training already finished! Begin to test your model")
