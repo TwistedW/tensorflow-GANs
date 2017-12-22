@@ -6,6 +6,9 @@ Tensorflow implementation of various GANs and VAEs.
 ## Pytorch version
 Pytorch Version is now availabel at https://github.com/znxlwm/pytorch-generative-model-collections
 
+## Project progress
+It's adapted to the cifar10, celebA. Details can be reached via email.
+
 ## Generative Adversarial Networks (GANs)
 ### Lists  
 
