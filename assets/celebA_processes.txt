@@ -4,3 +4,4 @@ black_Hair
 Gray_Hair
 Blond_Hair
 Brown_Hair
+add_schn
