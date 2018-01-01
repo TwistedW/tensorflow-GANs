@@ -5,4 +5,5 @@ Gray_Hair
 Blond_Hair
 Brown_Hair
 add_schn
-classes
+classes:
+lsun celebA mnist fashion-mnist svhn cifar10
