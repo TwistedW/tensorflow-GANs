@@ -1,0 +1,30 @@
+下载地址：https://www.jetbrains.com/pycharm/download/
+下载完成后对于windows用户直接运行.exe文件
+
+Reinforcement in Linux:
+1. Find the download file of tar.gz
+2. Unzip the file
+3. Find the file of pycharm.sh. It always save in bin.
+4. Run the pycharm. sh file
+Open the terminal and enter the command in the directory: ./pycharm.sh
+
+It can work but if you want to create a desktop shortcut you should:
+$ sudo gedit /usr/share/applications/Pycharm.desktop
+
+If you find you can't open or write this file you should:
+$ sudo mkdir -p /root/.local/share
+
+So you can write this file:
+[Desktop Entry] 
+Type=Application 
+Name=Pycharm 
+GenericName=Pycharm3 
+Comment=Pycharm3:The Python IDE 
+Exec=”/.../bin/pycharm.sh” %f 
+Icon=/..../bin/pycharm.png 
+Terminal=pycharm 
+Categories=Pycharm;
+
+The ... :A directory of your files
+
+So you can find  a desktop in /usr/share/applications
