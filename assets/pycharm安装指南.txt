@@ -28,3 +28,5 @@ Categories=Pycharm;
 The ... :A directory of your files
 
 So you can find  a desktop in /usr/share/applications
+
+Linux pycharm version: 2017.3.4
