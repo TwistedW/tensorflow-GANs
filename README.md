@@ -24,7 +24,7 @@ It's adapted to the cifar10, celebA. Details can be reached via email.
 **ACGAN**| [Arxiv](https://arxiv.org/abs/1610.09585) | <img src = 'assets/equations/ACGAN.png' height = '70px'>
 **EBGAN**| [Arxiv](https://arxiv.org/abs/1609.03126) | <img src = 'assets/equations/EBGAN.png' height = '70px'>
 **BEGAN**| [Arxiv](https://arxiv.org/abs/1702.08431) | <img src = 'assets/equations/BEGAN.png' height = '105px'> 
-**VAE_GAN**| [Arxiv](https://arxiv.org/abs/1512.09300) | 
+**VAE_GAN**| [Arxiv](https://arxiv.org/abs/1512.09300) | to be add 
 
 #### Variants of GAN structure
 <img src = 'assets/etc/GAN_structure.png' height = '600px'>
@@ -90,6 +90,7 @@ WGAN-GP | <img src = 'assets/fashion_mnist_results/random_generation/WGAN-GP_epo
 DRAGAN | <img src = 'assets/fashion_mnist_results/random_generation/DRAGAN_epoch000_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/DRAGAN_epoch019_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/DRAGAN_epoch039_test_all_classes.png' height = '230px'>
 EBGAN | <img src = 'assets/fashion_mnist_results/random_generation/EBGAN_epoch000_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/EBGAN_epoch019_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/EBGAN_epoch039_test_all_classes.png' height = '230px'>
 BEGAN | <img src = 'assets/fashion_mnist_results/random_generation/BEGAN_epoch000_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/BEGAN_epoch019_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/BEGAN_epoch039_test_all_classes.png' height = '230px'>
+VAE_GAN | to be add 
 
 #### Conditional generation
 Each row has the same noise vector and each column has the same label condition.

@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+# 部分注释可能有误，大家将就看看，我这几天抽空改一下
 from __future__ import division
 import os
 import time
