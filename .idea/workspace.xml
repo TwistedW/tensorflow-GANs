@@ -25,8 +25,6 @@
               <caret line="344" column="13" lean-forward="false" selection-start-line="344" selection-start-column="13" selection-end-line="344" selection-end-column="13" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
-                <marker date="1513057968000" expanded="true" signature="287:1372" ph="..." />
-                <marker date="1513057968000" expanded="true" signature="662:1372" ph="..." />
               </folding>
             </state>
           </provider>
@@ -86,13 +84,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WGAN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WGAN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4301">
-              <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inception_score.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inception_score.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+              <folding>
+                <element signature="e#165#203#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,19 +132,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BEGAN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BEGAN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5825">
-              <caret line="240" column="20" lean-forward="false" selection-start-line="240" selection-start-column="20" selection-end-line="240" selection-end-column="20" />
-              <folding>
-                <element signature="e#23#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -155,6 +160,7 @@
         <option value="$PROJECT_DIR$/VAE.py" />
         <option value="$PROJECT_DIR$/GAN.py" />
         <option value="$PROJECT_DIR$/WGAN.py" />
+        <option value="$PROJECT_DIR$/inception_score.py" />
       </list>
     </option>
   </component>
@@ -186,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,6 +207,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,7 +439,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12079063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -469,21 +476,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6125">
-          <caret line="252" column="13" lean-forward="true" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ACGAN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5650">
           <caret line="233" column="23" lean-forward="false" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
-            <marker date="1513057968000" expanded="true" signature="287:1372" ph="..." />
-            <marker date="1513057968000" expanded="true" signature="662:1372" ph="..." />
           </folding>
         </state>
       </provider>
@@ -560,8 +558,6 @@
           <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="30" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
-            <marker date="1513057968000" expanded="true" signature="287:1372" ph="..." />
-            <marker date="1513057968000" expanded="true" signature="662:1372" ph="..." />
           </folding>
         </state>
       </provider>
@@ -639,8 +635,6 @@
           <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="30" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
-            <marker date="1513057968000" expanded="true" signature="287:1372" ph="..." />
-            <marker date="1513057968000" expanded="true" signature="662:1372" ph="..." />
           </folding>
         </state>
       </provider>
@@ -690,8 +684,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
-            <marker date="1513057968000" expanded="true" signature="287:1372" ph="..." />
-            <marker date="1513057968000" expanded="true" signature="662:1372" ph="..." />
           </folding>
         </state>
       </provider>
@@ -808,8 +800,6 @@
           <caret line="344" column="13" lean-forward="false" selection-start-line="344" selection-start-column="13" selection-end-line="344" selection-end-column="13" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
-            <marker date="1513057968000" expanded="true" signature="287:1372" ph="..." />
-            <marker date="1513057968000" expanded="true" signature="662:1372" ph="..." />
           </folding>
         </state>
       </provider>
@@ -881,10 +871,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4301">
-          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inception_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+          <folding>
+            <element signature="e#165#203#0" expanded="true" />
           </folding>
         </state>
       </provider>
