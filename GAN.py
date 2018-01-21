@@ -133,7 +133,7 @@ class GAN(object):
         d_vars = [var for var in t_vars if 'd_' in var.name]
         g_vars = [var for var in t_vars if 'g_' in var.name]
 
-        # optimizers 优化器用于减小损失函数loss，采用Adam优化器
+        # optimizers 优化器用于减小损失函数loss，采用Adam优化器，可直接用minimize
         with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
             self.d_optim = tf.train.AdamOptimizer(self.learning_rate, beta1=self.beta1) \
                       .minimize(self.d_loss, var_list=d_vars)
