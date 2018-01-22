@@ -134,6 +134,7 @@ def save_scattered_image(z, id, z_range_x, z_range_y, name='scattered_image.jpg'
     axes.set_ylim([-z_range_y, z_range_y])
     plt.grid(True)
     plt.savefig(name)
+	plt.close()
 
 # borrowed from https://gist.github.com/jakevdp/91077b0cae40f8f8244a
 def discrete_cmap(N, base_cmap=None):
