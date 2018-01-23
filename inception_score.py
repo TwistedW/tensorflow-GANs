@@ -57,6 +57,7 @@ def _init_inception():
   global softmax
   if not os.path.exists(MODEL_DIR):
     os.makedirs(MODEL_DIR)
+	
   filename = DATA_URL.split('/')[-1]
   filepath = os.path.join(MODEL_DIR, filename)
   if not os.path.exists(filepath):
