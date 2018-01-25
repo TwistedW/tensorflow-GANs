@@ -236,7 +236,7 @@ The following shows basic folder structure.
 └── checkpoint # model files to be saved here
 ```
 ### Training Tips
-Use SGD for discriminator and ADAM for generator
+Use SGD for discriminator and ADAM for generator x
 
 ## Acknowledgements
 This implementation has been based on [this repository](https://github.com/carpedm20/DCGAN-tensorflow) and tested with Tensorflow over ver1.0 on Windows 10 and Ubuntu 14.04.
