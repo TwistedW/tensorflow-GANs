@@ -54,7 +54,7 @@ python2.7 data.py view <image db path>
 Export the images to a folder
 
 ```bash
-python2.7 data.py export <image db path> --out_dir <output directory>
+python2.7 data.py export <image db path> --out_dir <output directory> #important
 ```
 
 ### Example:
