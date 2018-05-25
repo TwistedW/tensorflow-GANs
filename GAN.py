@@ -51,9 +51,9 @@ class GAN(object):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)4c2s-(128)4c2s_BL-FC1024_BL-FC1_S
         with tf.variable_scope("discriminator", reuse=reuse):
-            # 经过这一步卷积后，(64,28,28,1)-->(64,14,14,64) 具体的计算为(28-2)/2+1
+            # 经过这一步卷积后，(64,28,28,1)-->(64,14,14,64)
             net = lrelu(conv2d(x, 64, 4, 4, 2, 2, name='d_conv1'))
-            # 经过这一步卷积后，(64,14,14,64)-->(64,7,7,128) 具体的计算为(14-2)/2+1
+            # 经过这一步卷积后，(64,14,14,64)-->(64,7,7,128)
             net = lrelu(bn(conv2d(net, 128, 4, 4, 2, 2, name='d_conv2'), is_training=is_training, scope='d_bn2'))#数据标准化
             #经过数组重构后，(64,7,7,128)-->(64,6272)
             net = tf.reshape(net, [self.batch_size, -1])
