@@ -24,7 +24,8 @@ It's adapted to the cifar10, celebA. Details can be reached via email.
 **ACGAN**| [Arxiv](https://arxiv.org/abs/1610.09585) | <img src = 'assets/equations/ACGAN.png' height = '70px'>
 **EBGAN**| [Arxiv](https://arxiv.org/abs/1609.03126) | <img src = 'assets/equations/EBGAN.png' height = '70px'>
 **BEGAN**| [Arxiv](https://arxiv.org/abs/1703.10717) | <img src = 'assets/equations/BEGAN.png' height = '105px'> 
-**VAE_GAN**| [Arxiv](https://arxiv.org/abs/1512.09300) | to be add 
+**VAE_GAN**| [Arxiv](https://arxiv.org/abs/1512.09300) | to be add
+**SAGAN** | [Arxiv](https://arxiv.org/abs/1805.08318) | <img src = 'assets/equations/GAN.png' height = '70px'> 
 
 #### Variants of GAN structure
 <img src = 'assets/etc/GAN_structure.png' height = '600px'>
@@ -51,6 +52,7 @@ DRAGAN | <img src = 'assets/mnist_results/random_generation/DRAGAN_epoch001_test
 EBGAN | <img src = 'assets/mnist_results/random_generation/EBGAN_epoch001_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/EBGAN_epoch009_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/EBGAN_epoch024_test_all_classes.png' height = '230px'>
 BEGAN | <img src = 'assets/mnist_results/random_generation/BEGAN_epoch001_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/BEGAN_epoch009_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/BEGAN_epoch024_test_all_classes.png' height = '230px'>
 VAE_GAN | <img src = 'assets/mnist_results/random_generation/VAE_GAN_epoch001_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/VAE_GAN_epoch009_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/VAE_GAN_epoch024_test_all_classes.png' height = '230px'>
+SAGAN | <img src = 'assets/mnist_results/random_generation/SAGAN_epoch001_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/SAGAN_epoch009_test_all_classes.png' height = '230px'> | <img src = 'assets/mnist_results/random_generation/SAGAN_epoch024_test_all_classes.png' height = '230px'>
 
 #### Conditional generation
 Each row has the same noise vector and each column has the same label condition.
@@ -91,6 +93,7 @@ DRAGAN | <img src = 'assets/fashion_mnist_results/random_generation/DRAGAN_epoch
 EBGAN | <img src = 'assets/fashion_mnist_results/random_generation/EBGAN_epoch000_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/EBGAN_epoch019_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/EBGAN_epoch039_test_all_classes.png' height = '230px'>
 BEGAN | <img src = 'assets/fashion_mnist_results/random_generation/BEGAN_epoch000_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/BEGAN_epoch019_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/BEGAN_epoch039_test_all_classes.png' height = '230px'>
 VAE_GAN | to be add 
+SAGAN | <img src = 'assets/fashion_mnist_results/random_generation/SAGAN_epoch000_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/SAGAN_epoch019_test_all_classes.png' height = '230px'> | <img src = 'assets/fashion_mnist_results/random_generation/SAGAN_epoch039_test_all_classes.png' height = '230px'>
 
 #### Conditional generation
 Each row has the same noise vector and each column has the same label condition.

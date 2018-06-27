@@ -11,6 +11,7 @@ from DRAGAN import DRAGAN
 from LSGAN import LSGAN
 from BEGAN import BEGAN
 from VAE_GAN import VAE_GAN
+from SAGAN import SAGAN
 
 ## VAE Variants
 from VAE import VAE
@@ -23,13 +24,15 @@ import tensorflow as tf
 import argparse
 
 """parsing and configuration"""
+
+
 def parse_args():
     desc = "Tensorflow implementation of GAN collections"
     parser = argparse.ArgumentParser(description=desc)
 
     parser.add_argument('--gan_type', type=str, default='GAN',
                         choices=['GAN', 'CGAN', 'infoGAN', 'ACGAN', 'EBGAN', 'BEGAN',
-                                 'WGAN', 'WGAN_GP', 'DRAGAN', 'LSGAN', 'VAE', 'CVAE', 'DCGAN', 'VAE_GAN'],
+                                 'WGAN', 'WGAN_GP', 'DRAGAN', 'LSGAN', 'VAE', 'CVAE', 'DCGAN', 'VAE_GAN', 'SAGAN'],
                         help='The type of GAN', required=True)
     parser.add_argument('--dataset', type=str, default='mnist', choices=['mnist', 'fashion-mnist', 'celebA'],
                         help='The name of dataset')
@@ -45,7 +48,10 @@ def parse_args():
 
     return check_args(parser.parse_args())
 
+
 """checking arguments"""
+
+
 def check_args(args):
     # --checkpoint_dir
     check_folder(args.checkpoint_dir)
@@ -76,12 +82,15 @@ def check_args(args):
 
     return args
 
+
 """main"""
+
+
 def main():
     # parse arguments
     args = parse_args()
     if args is None:
-      exit()
+        exit()
 
     # open session
     with tf.Session(config=tf.ConfigProto(allow_soft_placement=True)) as sess:
@@ -96,7 +105,8 @@ def main():
             gan = ACGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
                         checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'infoGAN':
-            gan = infoGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
+            gan = infoGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim,
+                          dataset_name=args.dataset,
                           checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'EBGAN':
             gan = EBGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
@@ -105,25 +115,31 @@ def main():
             gan = WGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
                        checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'WGAN_GP':
-            gan = WGAN_GP(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
-                       checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
+            gan = WGAN_GP(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim,
+                          dataset_name=args.dataset,
+                          checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'DRAGAN':
-            gan = DRAGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
-                       checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
+            gan = DRAGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim,
+                         dataset_name=args.dataset,
+                         checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'LSGAN':
             gan = LSGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
-                         checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
+                        checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'BEGAN':
             gan = BEGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
                         checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'VAE':
             gan = VAE(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
-                        checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
+                      checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         elif args.gan_type == 'CVAE':
             gan = CVAE(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
-                        checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
-	elif args.gan_type == 'VAE_GAN':
-            gan = VAE_GAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
+                       checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
+        elif args.gan_type == 'VAE_GAN':
+            gan = VAE_GAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim,
+                          dataset_name=args.dataset,
+                          checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
+        elif args.gan_type == 'SAGAN':
+            gan = SAGAN(sess, epoch=args.epoch, batch_size=args.batch_size, z_dim=args.z_dim, dataset_name=args.dataset,
                         checkpoint_dir=args.checkpoint_dir, result_dir=args.result_dir, log_dir=args.log_dir)
         else:
             raise Exception("[!] There is no option for " + args.gan_type)
@@ -139,8 +155,9 @@ def main():
         print(" [*] Training finished!")
 
         # visualize learned generator
-        gan.visualize_results(args.epoch-1)
+        gan.visualize_results(args.epoch - 1)
         print(" [*] Testing finished!")
+
 
 if __name__ == '__main__':
     main()
