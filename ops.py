@@ -84,3 +84,18 @@ def linear(input_, output_size, scope=None, stddev=0.02, bias_start=0.0, with_w=
             return tf.matmul(input_, matrix) + bias, matrix, bias
         else:
             return tf.matmul(input_, matrix) + bias
+
+def MinibatchLayer(dim_b, dim_c, inputs, name):
+    # input: batch_size, n_in
+    # M: batch_size, dim_b, dim_c
+    m = linear(inputs, dim_b * dim_c, scope=name)
+    m = tf.reshape(m, [-1, dim_b, dim_c])
+    # c: batch_size, batch_size, dim_b
+    c = tf.abs(tf.expand_dims(m, 0) - tf.expand_dims(m, 1))
+    c = tf.reduce_sum(c, reduction_indices=[3])
+    c = tf.exp(-c)
+    # o: batch_size, dim_b
+    o = tf.reduce_mean(c, reduction_indices=[1])
+    o -= 1  # to account for the zero L1 distance of each example with itself
+    # result: batch_size, n_in+dim_b
+    return tf.concat([o, inputs], axis=1)			
