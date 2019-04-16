@@ -193,7 +193,7 @@ class VAE_GAN(object):
         # Summary的含义是将参数打包后用于tensorboard的观察和模型的记录
         d_loss_real_sum = tf.summary.scalar("d_loss_real", d_loss_real)
         d_loss_fake_dec_sum = tf.summary.scalar("d_loss_fake_dec", d_loss_fake_dec)
-        d_loss_fake_dec_sum = tf.summary.scalar("d_loss_fake_dec_ns", d_loss_fake_dec_ns)
+        d_loss_fake_dec_ns_sum = tf.summary.scalar("d_loss_fake_dec_ns", d_loss_fake_dec_ns)
         d_loss_sum = tf.summary.scalar("d_loss", self.d_loss)
         # final summary operations
         self.merged_summary_op = tf.summary.merge_all()
